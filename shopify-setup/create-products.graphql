@@ -1,0 +1,46 @@
+mutation {
+  p1: productSet(input: {
+    title: "T-shirt Graphique Néon"
+    descriptionHtml: "<p>T-shirt en coton bio avec impression graphique style néon. Confortable, tendance et durable.</p>"
+    vendor: "Ma Boutique"
+    status: ACTIVE
+    productOptions: [{ name: "Taille", values: [{ name: "Unique" }] }]
+    variants: [{ optionValues: [{ optionName: "Taille", name: "Unique" }], price: "24.99" }]
+  }) {
+    product { id handle }
+    userErrors { field message }
+  }
+  p2: productSet(input: {
+    title: "Mug Céramique Café & Code"
+    descriptionHtml: "<p>Mug en céramique 350 ml pour les amoureux du café et du code. Passe au lave-vaisselle.</p>"
+    vendor: "Ma Boutique"
+    status: ACTIVE
+    productOptions: [{ name: "Couleur", values: [{ name: "Blanc" }] }]
+    variants: [{ optionValues: [{ optionName: "Couleur", name: "Blanc" }], price: "14.90" }]
+  }) {
+    product { id handle }
+    userErrors { field message }
+  }
+  p3: productSet(input: {
+    title: "Casquette Brodée Origin"
+    descriptionHtml: "<p>Casquette ajustable avec broderie premium. Le compagnon parfait des journées ensoleillées.</p>"
+    vendor: "Ma Boutique"
+    status: ACTIVE
+    productOptions: [{ name: "Couleur", values: [{ name: "Noir" }] }]
+    variants: [{ optionValues: [{ optionName: "Couleur", name: "Noir" }], price: "19.99" }]
+  }) {
+    product { id handle }
+    userErrors { field message }
+  }
+  p4: productSet(input: {
+    title: "Sac Tote Shopping Local"
+    descriptionHtml: "<p>Sac tote bag en toile épaisse, idéal pour vos courses en soutenant le commerce local.</p>"
+    vendor: "Ma Boutique"
+    status: ACTIVE
+    productOptions: [{ name: "Coloris", values: [{ name: "Naturel" }] }]
+    variants: [{ optionValues: [{ optionName: "Coloris", name: "Naturel" }], price: "16.50" }]
+  }) {
+    product { id handle }
+    userErrors { field message }
+  }
+}

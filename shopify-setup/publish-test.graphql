@@ -1,0 +1,5 @@
+mutation {
+  p2: publishablePublish(id: "gid://shopify/Product/8047025750094", input: { publicationId: "gid://shopify/Publication/196746707022" }) { userErrors { field message } }
+  p3: publishablePublish(id: "gid://shopify/Product/8047025782862", input: { publicationId: "gid://shopify/Publication/196746707022" }) { userErrors { field message } }
+  p4: publishablePublish(id: "gid://shopify/Product/8047025815630", input: { publicationId: "gid://shopify/Publication/196746707022" }) { userErrors { field message } }
+}

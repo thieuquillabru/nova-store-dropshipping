@@ -1,0 +1,8 @@
+mutation {
+  pub: publications(first: 5) {
+    nodes { id name }
+  }
+  products: products(first: 10) {
+    edges { node { id title } }
+  }
+}

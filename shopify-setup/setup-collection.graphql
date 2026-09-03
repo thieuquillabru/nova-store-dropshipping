@@ -1,0 +1,13 @@
+mutation {
+  add: collectionAddProductsV2(id: "gid://shopify/Collection/315070480462", productIds: [
+    "gid://shopify/Product/8047025717326",
+    "gid://shopify/Product/8047025750094",
+    "gid://shopify/Product/8047025782862",
+    "gid://shopify/Product/8047025815630"
+  ]) {
+    userErrors { field message }
+  }
+  pub: publishablePublish(id: "gid://shopify/Collection/315070480462", input: { publicationId: "gid://shopify/Publication/196746707022" }) {
+    userErrors { field message }
+  }
+}

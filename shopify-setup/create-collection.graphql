@@ -1,0 +1,10 @@
+mutation {
+  c: collectionCreate(input: {
+    title: "Nouveautés"
+    descriptionHtml: "<p>Les dernières nouveautés de la boutique, à découvrir sans attendre.</p>"
+    handle: "nouveautes"
+  }) {
+    collection { id handle }
+    userErrors { field message }
+  }
+}

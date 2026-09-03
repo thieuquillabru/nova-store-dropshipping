@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nova Store - Liquid Glass</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: radial-gradient(1200px 800px at 15% 20%, rgba(10,132,255,0.6), transparent 60%), radial-gradient(1000px 750px at 85% 15%, rgba(191,90,242,0.55), transparent 60%), linear-gradient(165deg, #1a1f3a, #2d1b4e 40%, #1e3a5f);
+      background-attachment: fixed; color: #fff; min-height: 100vh; padding: 2rem;
+    }
+    header { display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; margin: 0 auto 3rem; max-width: 1200px; background: rgba(255,255,255,0.1); backdrop-filter: blur(20px); border-radius: 20px; border: 1px solid rgba(255,255,255,0.2); }
+    .logo { font-size: 1.5rem; font-weight: 700; }
+    nav a { color: rgba(255,255,255,0.8); text-decoration: none; margin-left: 2rem; font-weight: 500; }
+    .hero { text-align: center; padding: 4rem 2rem; max-width: 800px; margin: 0 auto 4rem; }
+    .hero h1 { font-size: 3rem; font-weight: 800; margin-bottom: 1rem; }
+    .hero p { font-size: 1.25rem; color: rgba(255,255,255,0.7); margin: 0 auto 2rem; }
+    .btn { display: inline-block; padding: 1rem 2.5rem; border-radius: 14px; background: linear-gradient(135deg, #0a84ff, #5e5ce6); color: #fff; font-weight: 600; text-decoration: none; box-shadow: 0 6px 20px rgba(10,132,255,0.35); transition: all 0.3s; }
+    .btn:hover { transform: translateY(-2px); }
+    .section-title { text-align: center; margin-bottom: 3rem; }
+    .section-title h2 { font-size: 2rem; }
+    .products { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto 4rem; }
+    .card { position: relative; background: rgba(255,255,255,0.15); backdrop-filter: blur(20px); border-radius: 20px; border: 1px solid rgba(255,255,255,0.3); box-shadow: 0 8px 32px rgba(0,0,0,0.1), inset 0 1px 0 rgba(255,255,255,0.5); overflow: hidden; transition: transform 0.35s; }
+    .card:hover { transform: translateY(-8px) scale(1.02); }
+    .card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.8), transparent); }
+    .card-image { width: 100%; height: 200px; display: flex; align-items: center; justify-content: center; font-size: 4rem; background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05)); }
+    .card-body { padding: 1.5rem; }
+    .card-body h3 { font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem; }
+    .card-body p { color: rgba(255,255,255,0.6); font-size: 0.9rem; margin-bottom: 1rem; }
+    .price { font-size: 1.25rem; font-weight: 700; }
+    footer { text-align: center; padding: 3rem 2rem; margin-top: 4rem; background: rgba(255,255,255,0.08); backdrop-filter: blur(20px); border-radius: 30px 30px 0 0; border-top: 1px solid rgba(255,255,255,0.15); color: rgba(255,255,255,0.6); }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">✨ Nova Store</div>
+    <nav><a href="#">Accueil</a><a href="#">Boutique</a><a href="#">Contact</a></nav>
+  </header>
+  <section class="hero">
+    <h1>✨ Nova Store — Nouveau Look !</h1>
+    <p>Découvrez notre collection et profitez de nos nouveautés chaque semaine.</p>
+    <a href="#produits" class="btn">Voir les produits</a>
+  </section>
+  <div class="section-title" id="produits"><h2>Nouveautés</h2><p>Notre sélection du moment</p></div>
+  <div class="products">
+    <div class="card"><div class="card-image">👕</div><div class="card-body"><h3>T-shirt Graphique Néon</h3><p>T-shirt coton bio impression néon.</p><div class="price">24,99 €</div></div></div>
+    <div class="card"><div class="card-image">☕</div><div class="card-body"><h3>Mug Café & Code</h3><p>Mug céramique 350 ml.</p><div class="price">14,90 €</div></div></div>
+    <div class="card"><div class="card-image">🧢</div><div class="card-body"><h3>Casquette Brodée</h3><p>Casquette ajustable premium.</p><div class="price">19,99 €</div></div></div>
+    <div class="card"><div class="card-image">👜</div><div class="card-body"><h3>Sac Tote Local</h3><p>Sac toile épaisse.</p><div class="price">16,50 €</div></div></div>
+  </div>
+  <footer><p>© 2026 Nova Store — Design Liquid Glass</p></footer>
+</body>
+</html>
