@@ -1,0 +1,66 @@
+mutation {
+  p1: productSet(input: {
+    title: "Clavier Mécanique RGB Gaming"
+    descriptionHtml: "<p>Clavier mécanique avec rétroéclairage RGB personnalisable. Switches bleus tactiles et clics satisfaits. Idéal pour gaming et travail. Connexion USB-C, compatible PC/Mac.</p><ul><li>104 touches</li><li>Rétroéclairage RGB 16.8M couleurs</li><li>Switches mécaniques bleus</li><li>Repose-poignet inclus</li></ul>"
+    vendor: "Nova Store"
+    status: ACTIVE
+    productType: "Informatique"
+    tags: ["clavier", "gaming", "rgb", "mécanique", "usb-c"]
+    productOptions: [{ name: "Couleur", values: [{ name: "Noir" }, { name: "Blanc" }] }]
+    variants: [
+      { optionValues: [{ optionName: "Couleur", name: "Noir" }], price: "39.90" },
+      { optionValues: [{ optionName: "Couleur", name: "Blanc" }], price: "39.90" }
+    ]
+  }) {
+    product { id handle title }
+    userErrors { field message }
+  }
+  p2: productSet(input: {
+    title: "Souris Ergonomique Sans Fil"
+    descriptionHtml: "<p>Souris ergonomique sans fil 2.4GHz avec design anti-fatigue. 6 boutons programmables, DPI ajustable jusqu'à 3200. Autonomie 12 mois. Compatible PC/Mac.</p><ul><li>Connexion 2.4GHz stable</li><li>DPI 800/1600/2400/3200</li><li>Autonomie 12 mois</li><li>Design ergonomique droitier</li></ul>"
+    vendor: "Nova Store"
+    status: ACTIVE
+    productType: "Informatique"
+    tags: ["souris", "ergonomique", "sans fil", "2.4ghz", "usb"]
+    productOptions: [{ name: "Couleur", values: [{ name: "Noir" }, { name: "Gris" }] }]
+    variants: [
+      { optionValues: [{ optionName: "Couleur", name: "Noir" }], price: "29.90" },
+      { optionValues: [{ optionName: "Couleur", name: "Gris" }], price: "29.90" }
+    ]
+  }) {
+    product { id handle title }
+    userErrors { field message }
+  }
+  p3: productSet(input: {
+    title: "Support Laptop Réglable Aluminium"
+    descriptionHtml: "<p>Support laptop en aluminium premium, réglable en hauteur et angle. Compatible 10-17 pouces. Ventilation passive intégrée. Pliable et portable.</p><ul><li>Aluminium aviation</li><li>Hauteur réglable 5-40cm</li><li>Compatible 10-17 pouces</li><li>Ventilation passive</li><li>Pliable, poids 1.2kg</li></ul>"
+    vendor: "Nova Store"
+    status: ACTIVE
+    productType: "Informatique"
+    tags: ["support", "laptop", "aluminium", "réglable", "ergonomique"]
+    productOptions: [{ name: "Couleur", values: [{ name: "Argent" }, { name: "Noir" }] }]
+    variants: [
+      { optionValues: [{ optionName: "Couleur", name: "Argent" }], price: "35.90" },
+      { optionValues: [{ optionName: "Couleur", name: "Noir" }], price: "35.90" }
+    ]
+  }) {
+    product { id handle title }
+    userErrors { field message }
+  }
+  p4: productSet(input: {
+    title: "Hub USB-C 7-en-1"
+    descriptionHtml: "<p>Hub USB-C 7 ports pour MacBook et PC modernes. HDMI 4K@60Hz, USB 3.0, lecteur SD/TF, PD 100W. Compact et aluminium.</p><ul><li>HDMI 4K@60Hz</li><li>2x USB 3.0 5Gbps</li><li>Lecteur SD/TF</li><li>PD Charge 100W</li><li>Aluminium premium</li></ul>"
+    vendor: "Nova Store"
+    status: ACTIVE
+    productType: "Informatique"
+    tags: ["hub", "usb-c", "macbook", "hdmi", "4k"]
+    productOptions: [{ name: "Couleur", values: [{ name: "Gris Sidéral" }, { name: "Argent" }] }]
+    variants: [
+      { optionValues: [{ optionName: "Couleur", name: "Gris Sidéral" }], price: "42.90" },
+      { optionValues: [{ optionName: "Couleur", name: "Argent" }], price: "42.90" }
+    ]
+  }) {
+    product { id handle title }
+    userErrors { field message }
+  }
+}
