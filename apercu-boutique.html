@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nova Store — Apercu Boutique</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --bg: #0b0806;
+      --text: #ffffff;
+      --text-muted: #ffffff9e;
+      --accent: #e9cb92;
+      --glass-bg: rgba(255, 255, 255, 0.08);
+      --glass-border: rgba(255, 255, 255, 0.15);
+      --radius: 20px;
+    }
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+    }
+    header {
+      position: sticky; top: 0; z-index: 100;
+      padding: 1rem 2rem;
+      background: rgba(11, 8, 6, 0.85);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--glass-border);
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .logo { font-family: 'Archivo', serif; font-size: 1.5rem; font-weight: 700; color: var(--accent); }
+    nav a { color: var(--text-muted); text-decoration: none; margin-left: 2rem; font-size: 0.9rem; }
+    nav a:hover { color: var(--text); }
+    .hero { text-align: center; padding: 6rem 2rem; max-width: 800px; margin: 0 auto; }
+    .hero h1 { font-family: 'Archivo', serif; font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 800; margin-bottom: 1.5rem; background: linear-gradient(135deg, #fff, var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .hero p { font-size: 1.25rem; color: var(--text-muted); margin-bottom: 2rem; }
+    .cta { display: inline-block; padding: 1rem 2.5rem; border-radius: 14px; background: linear-gradient(135deg, var(--accent), #f4dcae); color: #0b0806; font-weight: 600; text-decoration: none; transition: all 0.3s; }
+    .cta:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(233, 203, 146, 0.3); }
+    .section-title { text-align: center; padding: 4rem 2rem 2rem; }
+    .section-title h2 { font-family: 'Archivo', serif; font-size: 2rem; }
+    .products { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto; padding: 2rem; }
+    .card { position: relative; background: var(--glass-bg); backdrop-filter: blur(20px) saturate(125%); -webkit-backdrop-filter: blur(20px) saturate(125%); border-radius: var(--radius); border: 1px solid var(--glass-border); overflow: hidden; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+    .card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.8), transparent); z-index: 2; }
+    .card::after { content: ''; position: absolute; top: 0; left: 0; width: 1px; height: 100%; background: linear-gradient(180deg, rgba(255,255,255,0.8), transparent, rgba(255,255,255,0.3)); z-index: 2; }
+    .card:hover { transform: translateY(-8px) scale(1.02); box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5); }
+    .card-image { width: 100%; height: 220px; background: linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02)); display: flex; align-items: center; justify-content: center; font-size: 5rem; }
+    .card-body { padding: 1.5rem; }
+    .card-body h3 { font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem; }
+    .card-body p { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1rem; }
+    .price { font-size: 1.5rem; font-weight: 700; color: var(--accent); }
+    footer { text-align: center; padding: 4rem 2rem; margin-top: 4rem; background: var(--glass-bg); backdrop-filter: blur(20px); border-top: 1px solid var(--glass-border); color: var(--text-muted); }
+    @media (max-width: 768px) { .products { grid-template-columns: 1fr; } nav a { margin-left: 1rem; font-size: 0.8rem; } }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">✨ Nova Store</div>
+    <nav><a href="#">Accueil</a><a href="#">Boutique</a><a href="#">Contact</a></nav>
+  </header>
+  <section class="hero">
+    <h1>Nova Store — Nouveau Look !</h1>
+    <p>Découvrez notre collection tech et profitez de nos nouveautés chaque semaine.</p>
+    <a href="#produits" class="cta">Voir les produits</a>
+  </section>
+  <div class="section-title" id="produits"><h2>Nouveautés</h2><p>Notre sélection tech du moment</p></div>
+  <div class="products">
+    <div class="card"><div class="card-image">⌨️</div><div class="card-body"><h3>Clavier Mécanique RGB</h3><p>Switches bleus, RGB, repose-poignet.</p><div class="price">39,90 €</div></div></div>
+    <div class="card"><div class="card-image">🖱️</div><div class="card-body"><h3>Souris Ergonomique</h3><p>2.4GHz, DPI 3200, 12 mois.</p><div class="price">29,90 €</div></div></div>
+    <div class="card"><div class="card-image">💻</div><div class="card-body"><h3>Support Laptop</h3><p>Aluminium, 5-40cm, pliable.</p><div class="price">35,90 €</div></div></div>
+    <div class="card"><div class="card-image">🔌</div><div class="card-body"><h3>Hub USB-C 7-en-1</h3><p>HDMI 4K, USB 3.0, PD 100W.</p><div class="price">42,90 €</div></div></div>
+    <div class="card"><div class="card-image">👕</div><div class="card-body"><h3>T-shirt Graphique Néon</h3><p>Coton bio, impression néon.</p><div class="price">24,99 €</div></div></div>
+    <div class="card"><div class="card-image">☕</div><div class="card-body"><h3>Mug Café & Code</h3><p>350 ml, lave-vaisselle.</p><div class="price">14,90 €</div></div></div>
+    <div class="card"><div class="card-image">🧢</div><div class="card-body"><h3>Casquette Brodée</h3><p>Ajustable, broderie premium.</p><div class="price">19,99 €</div></div></div>
+    <div class="card"><div class="card-image">👜</div><div class="card-body"><h3>Sac Tote Local</h3><p>Toile épaisse.</p><div class="price">16,50 €</div></div></div>
+  </div>
+  <footer><p>© 2026 Nova Store — Design Liquid Glass</p></footer>
+</body>
+</html>

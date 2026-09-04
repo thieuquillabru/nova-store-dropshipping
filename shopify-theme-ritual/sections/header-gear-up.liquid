@@ -1,0 +1,171 @@
+{% comment %}
+  Header style Gear Up - Gaming/Thunder Theme
+  Inspire de https://thieuquillabru.github.io/gear-up/
+{% endcomment %}
+
+<style>
+  :root {
+    --gear-bg: #020D06;
+    --gear-purple: #A238FF;
+    --gear-purple-light: #9F33FF;
+    --gear-cyan: #1CC8E0;
+    --gear-orange: #FF6F14;
+    --gear-white: #FFFFFF;
+    --gear-glass-bg: rgba(255, 255, 255, 0.08);
+    --gear-glass-border: rgba(255, 255, 255, 0.14);
+    --gear-blur: blur(12px);
+  }
+
+  #shopify-section-header { position: sticky; top: 0; z-index: 999; }
+
+  .gear-promo-banner {
+    position: relative; z-index: 80; height: 36px; width: 100%;
+    overflow: hidden; background: var(--gear-purple);
+    display: flex; align-items: center; justify-content: center;
+  }
+
+  .gear-promo-banner__text {
+    font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 600;
+    letter-spacing: 0.01em; color: var(--gear-white); white-space: nowrap;
+  }
+
+  .gear-header {
+    position: relative; z-index: 70; background: var(--gear-bg);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .gear-header__inner {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1rem 2rem; max-width: 1400px; margin: 0 auto;
+  }
+
+  .gear-logo {
+    font-family: 'Archivo', 'Inter', sans-serif; font-size: 1.75rem;
+    font-weight: 800; letter-spacing: -0.02em;
+    background: linear-gradient(135deg, var(--gear-white) 0%, var(--gear-cyan) 100%);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    text-decoration: none; transition: opacity 0.3s;
+  }
+
+  .gear-logo:hover { opacity: 0.85; }
+
+  .gear-nav {
+    display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1.25rem;
+    border-radius: 999px; border: 1px solid var(--gear-glass-border);
+    background: var(--gear-glass-bg); backdrop-filter: var(--gear-blur);
+    -webkit-backdrop-filter: var(--gear-blur);
+  }
+
+  .gear-nav__link {
+    font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 700;
+    letter-spacing: 0.06em; text-transform: uppercase; color: var(--gear-white);
+    text-decoration: none; padding: 0.5rem 0.75rem; border-radius: 999px;
+    transition: all 0.2s ease;
+  }
+
+  .gear-nav__link:hover { background: rgba(255,255,255,0.1); opacity: 0.9; }
+  .gear-nav__link--active { background: var(--gear-purple); color: var(--gear-white); }
+
+  .gear-actions { display: flex; align-items: center; gap: 1rem; }
+
+  .gear-btn {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    padding: 0.75rem 1.5rem; border-radius: 999px;
+    font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 700;
+    letter-spacing: 0.01em; text-decoration: none; transition: all 0.2s ease;
+    cursor: pointer; border: none;
+  }
+
+  .gear-btn--primary {
+    background: var(--gear-purple); color: var(--gear-white);
+    box-shadow: 0 8px 24px rgba(162, 56, 255, 0.3);
+  }
+
+  .gear-btn--primary:hover {
+    transform: scale(1.05); filter: brightness(1.1);
+    box-shadow: 0 12px 32px rgba(162, 56, 255, 0.4);
+  }
+
+  .gear-cart {
+    position: relative; display: flex; align-items: center; justify-content: center;
+    width: 44px; height: 44px; border-radius: 50%;
+    background: var(--gear-glass-bg); border: 1px solid var(--gear-glass-border);
+    color: var(--gear-white); text-decoration: none; transition: all 0.2s;
+  }
+
+  .gear-cart:hover { background: rgba(255,255,255,0.12); transform: scale(1.05); }
+
+  .gear-cart__count {
+    position: absolute; top: -4px; right: -4px; width: 20px; height: 20px;
+    border-radius: 50%; background: var(--gear-orange); color: var(--gear-white);
+    font-size: 10px; font-weight: 700; display: flex; align-items: center; justify-content: center;
+  }
+
+  .gear-header.scrolled {
+    background: rgba(2, 13, 6, 0.95); backdrop-filter: blur(20px);
+    border-bottom-color: rgba(255, 255, 255, 0.05);
+  }
+
+  .gear-header.scrolled::after {
+    content: ''; position: absolute; bottom: -1px; left: 0; right: 0; height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gear-purple), transparent); opacity: 0.5;
+  }
+
+  @media (max-width: 768px) {
+    .gear-nav { display: none; }
+    .gear-header__inner { padding: 0.75rem 1rem; }
+    .gear-logo { font-size: 1.25rem; }
+    .gear-btn--primary { padding: 0.6rem 1rem; font-size: 12px; }
+  }
+</style>
+
+<div class="gear-promo-banner">
+  <span class="gear-promo-banner__text">🔥🔥 Profitez de 10% de réduction et équipez-vous comme un Pro 🔥🔥</span>
+</div>
+
+<header class="gear-header" data-gear-header>
+  <div class="gear-header__inner">
+
+    <a href="{{ routes.root_url }}" class="gear-logo">NOVA&nbsp;STORE</a>
+
+    <nav class="gear-nav" aria-label="Navigation principale">
+      {%- assign gear_menu = linklists['main-menu'] -%}
+      {%- for link in gear_menu.links limit: 5 -%}
+        <a href="{{ link.url }}" class="gear-nav__link{% if link.active %} gear-nav__link--active{% endif %}">{{ link.title }}</a>
+      {%- endfor -%}
+    </nav>
+
+    <div class="gear-actions">
+      <a href="{{ routes.cart_url }}" class="gear-cart" aria-label="{{ 'accessibility.cart' | t | default: 'Panier' }}">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13 5.4 5M7 13l-2.3 4.3A1 1 0 0 0 5.6 18.8H17M9 21a1 1 0 1 0 0-2 1 1 0 0 0 0 2Zm8 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        {%- if cart.item_count > 0 -%}
+          <span class="gear-cart__count">{{ cart.item_count }}</span>
+        {%- endif -%}
+      </a>
+      <a href="{{ routes.all_products_collection_url }}" class="gear-btn gear-btn--primary">Commander →</a>
+    </div>
+
+  </div>
+</header>
+
+<script>
+  (function () {
+    var header = document.querySelector('[data-gear-header]');
+    if (!header) return;
+    var onScroll = function () {
+      header.classList.toggle('scrolled', window.scrollY > 10);
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Header Gear Up",
+  "tag": "section",
+  "settings": []
+}
+{% endschema %}
